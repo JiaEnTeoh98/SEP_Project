@@ -12,9 +12,19 @@
         border:1px white;    
         }
 
-        .button{
+        .Vbutton{
             background-color:#E2E6E6;
             color:black;
+            border-radius:4px;
+            border-width:1px;
+            height:25px;
+            width:150px;
+            font-family:Times New Roman;
+        }
+
+        .Rbutton{
+            background-color:#279EFC ;
+            color:white;
             border-radius:4px;
             border-width:1px;
             height:25px;
@@ -69,7 +79,15 @@
             <td><input type="text" name="Dev_Damage" placeholder="Device Damage" size="100" required></td>
         </tr>
         </table>
-        <br><br><br><button type="submit" name="viewQ" value="View Quotation" class="button">View Quotation&nbsp;
+        <table>
+        <tr>
+        <td>
+        <button type="submit" name="viewQ" value="View Quotation" class="Vbutton" disabled>View Quotation
+        </td>
+        <td><button type="submit" name="requestQ" value="Request Quotation" class="Rbutton">Request Quotation
+        </td>
+        <td><button type="submit" name="Cancel" value="Cancel" class="Rbutton">Cancel
+        </td>
            
        </form>
        

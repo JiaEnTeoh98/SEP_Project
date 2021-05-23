@@ -27,7 +27,7 @@
         <br><br><br><br><br><br>
         <div>
         
-        <button onclick="window.location.href = 'RiderPickupList.blade.php';" class="button" >Manage Pickup</button>
+        <button onclick="window.location.href = 'RiderPickupList';" class="button" >Manage Pickup</button>
         <br><br><br><br>
         <button onclick="window.location.href = 'RiderDeliveryList.blade.php';" class="button" >Manage Delivery</button>
         

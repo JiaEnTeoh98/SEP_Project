@@ -28,3 +28,8 @@ Route::get('/tryRPS', function () {
 Route::get('/tryRPL', function () {
     return view('RiderPickupList');
 });
+
+Route::get('riderPickupList', function()
+{
+    return view('RiderPickupList');
+});

@@ -4,7 +4,9 @@
         
     </head>
     <style>
-        
+        table thead#ROW1 {background-color:E5E5FC;}
+
+
         th, td {
         padding: 5px;
         vertical-align: top;
@@ -37,12 +39,13 @@
         <table style="border: 1px solid black;
             border-collapse: collapse;padding: 7px;
         vertical-align: top;text-align: left;">
-        <thead>
+        <thead id="ROW1">
         <th>No</th>
         <th>Quotation ID</th>
         <th>Name</th>
         <th>Address</th>
         <th>Action</th>
+        </thead>
         <tr>
         <td>1</td>
         <td>0001</td>

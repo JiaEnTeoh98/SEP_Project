@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/ridermenu', function () {
     return view('RiderPickupandDelivery');
 });
+
+Route::get('/tryRPS', function () {
+    return view('RiderPickupStatus');
+});
+
+Route::get('/tryRPL', function () {
+    return view('RiderPickupList');
+});

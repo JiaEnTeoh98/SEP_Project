@@ -33,3 +33,11 @@ Route::get('riderPickupList', function()
 {
     return view('RiderPickupList');
 });
+
+Route::middleware(['auth'])->group(function(){
+
+    Route::middleware(['redirectRider'])->group(function(){
+        Route::post('/viewPendingList', [App\Http\Controllers\PickupandDeliveryController::class, 'viewPendingList']);
+
+    });
+});

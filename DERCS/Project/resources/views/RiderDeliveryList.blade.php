@@ -4,7 +4,7 @@
         
     </head>
     <style>
-        table thead#ROW1 {background-color:E5E5FC;}
+        table tr#ROW1 {background-color:E5E5FC;}
 
 
         th, td {
@@ -35,25 +35,35 @@
         <br>
         
         <!--To show customer list waiting for deliver-->
-        <form action="" method="POST">
+        
         <table style="border: 1px solid black;
             border-collapse: collapse;padding: 7px;
         vertical-align: top;text-align: left;">
-        <thead id="ROW1">
+        <tr id="ROW1">
         <th>No</th>
         <th>Quotation ID</th>
         <th>Name</th>
         <th>Address</th>
         <th>Action</th>
-        </thead>
+        </tr>
+        @php($i=1)
+        foreach ($pending as $row)
         <tr>
-        <td>1</td>
-        <td>0001</td>
-        <td>Teoh Jia En</td>
-        <td>12, Lorong Sentosa</td>
-        <td><button type="submit" name="Access" value="Access" class="button">Access</td>
+        <td><input type="text" value="{{$i}}" readonly></td>
+        <td><input type="text" value="{{$row->Quotation_ID}}" readonly></td>
+        <td><input type="text" value="{{$username}}" readonly></td>
+        <td><input type="text" value="{{$Address}}" readonly></td>
+        <td>
+        <form action="accept" method="post">
+            @csrf
+            <input type="hidden" value="{{$row->id}}" name="id">
+            <button class="button" type="submit">Access</button>
+        </form>
+        </td>
         
         </tr>
+        @php (Si++)
+        @endforeach
         </table>
         
         

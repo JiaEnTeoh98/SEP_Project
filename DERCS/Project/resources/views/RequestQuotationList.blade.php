@@ -43,9 +43,9 @@
         <th>Price (RM)</th>
         <th>Decsription</th>
         <tr>
-        <td>0001</td>
-        <td>Teoh Jia En</td>
-        <td>01234567</td>
+        <td><input type="text" value="{{$row1->Quotation_ID}}"readonly></td>
+        <td><input type="text" value="{{$row1->name}}"readonly></td>
+        <td><input type="text" value="{{$row1->phone}}"readonly></td>
         <td><button type="submit" name="View Details" value="View Deatils" class="Rbutton">View Deatils</td>
         
         </tr>

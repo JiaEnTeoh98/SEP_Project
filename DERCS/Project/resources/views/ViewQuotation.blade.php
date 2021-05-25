@@ -45,18 +45,23 @@
         <br><br>+601234567 <br> DERCSComputer@gmail.com</td></tr>
         </table>
 
+        @foreach ($info as $row1)
+                @php 
+                    $temp = explode(' ',$row1->updated_at); 
+                @endphp
+
         <!--To show customer details-->
         &nbsp;
         <table>
         <tr>
         <td>To:</td>
-        <td>Teoh Jia En<br>
-        12,Lorong sentosa<br>
-        0123456789</td>
+        <td><input type="text" value="{{$row1->name}}"readonly><br>
+        <input type="text" value="{{$row1->address}}"readonly><br>
+        <input type="text" value="{{$row1->phone}}"readonly></td>
         </tr>
         </table>
 
-        Quotation ID: 0001
+        Quotation ID: <input type="text" value="{{$row1->Quotation_ID}}"readonly>
         <br>
         Valid Until: 30/3/2021
         
@@ -73,12 +78,12 @@
         <th>Decsription</th>
         <tr>
         <td colspan="2">Service Change</td>
-        <td>20</td>
+        <td><input type="text" value="{{$row1->serviceCharge}}"readonly></td>
         <td></td>
         </tr>
         <tr >
         <td colspan="2">Total Price (RM) </td>
-        <td colspan="2" >200</td>
+        <td colspan="2" ><input type="text" value="{{$row1->repairingcost}}"readonly></td>
         </tr>
         </table>
         

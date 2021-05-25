@@ -41,3 +41,7 @@ Route::middleware(['auth'])->group(function(){
 
     });
 });
+
+//to upload image evidence and display the evidence
+Route::get('/uploadfile','PickupadnDeliveryController@index');
+Route::post('/uploadfile','PickupandDEliveryController@showUploadFile');

@@ -35,10 +35,13 @@ div {text-align: center;}
         <br>
         
         <!--Rider need to upload delivery evidence-->
-        <form action="" method="POST">
         <table style="border: 1px solid back;
             border-collapse: collapse;padding: 7px;
         vertical-align: top;text-align: left;">
+        @foreach ($info as $row1)
+                @php 
+                    $temp = explode(' ',$row1->updated_at); 
+                @endphp
         <tr>
         <td colspan="2"; id="ROW1">Delivery Information</td>
         <td>Quotation ID: </td>
@@ -52,26 +55,46 @@ div {text-align: center;}
 
         <tr>
         <td>Name:</td>
-        <td>Teoh Jia En</td>
+        <td><input type="text" value="{{$row1->name}}"readonly></td>
         <td>Model:</td>
-        <td>Asus VivoBookS</td>
+        <td><input type="text" value="{{$row1->Devicemodel}}"readonly></td>
         </tr>
 
         <tr>
         <td>H/P NO:</td>
-        <td>012344567</td>
+        <td><input type="text" value="{{$row1->phone}}"readonly></td>
         <td>Color</td>
-        <td>Grey</td>
+        <td><input type="text" value="{{$row1->Devicecolor}}"readonly></td>
         </tr>
 
         <tr>
         <td>Address:</td>
-        <td>12, Lorong Sentosa</td>
+        <td><input type="text" value="{{$row1->address}}"readonly></td>
+        @if($row1->trackProgress == 'Returning')
+        <form action="evidence" method="post">
+        @csrf
+        <input type="hidden" value="{{$row1->id}}" name="Quotation_ID">
         <td colspan="2"><button type="submit" name="Upload" value="Upload" class="button">Upload
-        <button type="submit" name="Receive" value="Receive" class="button">Receive Payment</td>
+        <?php
+         echo Form::open(array('url' => '/uploadfile','files'=>'true'));
+         echo 'Select the file to upload.';
+         echo Form::file('image');
+         echo Form::submit('Upload File');
+         echo Form::close();
+        ?>
+        <button type="submit" name="Receive" value="Receive" class="button">Receive Payment
+        <?php
+         echo Form::open(array('url' => '/uploadfile','files'=>'true'));
+         echo 'Select the file to upload.';
+         echo Form::file('image');
+         echo Form::submit('Upload File');
+         echo Form::close();
+        ?></td>
+        </form>
+        @endif
         </tr>
         
-        
+        @endforeach
         </table>
         
         

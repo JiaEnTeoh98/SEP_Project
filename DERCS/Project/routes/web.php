@@ -25,8 +25,8 @@ Route::get('/tryRPS', function () {
     return view('RiderPickupStatus');
 });
 
-Route::get('/tryRPL', function () {
-    return view('RiderPickupList');
+Route::get('/tryRDL', function () {
+    return view('RiderDeliveryList');
 });
 
 Route::get('riderPickupList', function()
